@@ -7,7 +7,7 @@
     "dev": "node ./server.js",
     "start": "cross-env-shell NODE_ENV=production \"npm run build && node ./server.js\"",
     "export:deploy": "cross-env-shell NODE_ENV=production UNIFORM_BUILD_MODE=export \"npm run build && next export\"",
-    "build": "next build",
+    "build": "cross-env-shell NODE_ENV=production UNIFORM_BUILD_MODE=export next build",
     "format": "prettier --write \"./{components,pages}/**/*.{js,ts,tsx}\""
   },
   "dependencies": {
