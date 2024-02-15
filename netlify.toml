@@ -1,0 +1,2 @@
+[build.environment]
+  UNIFORM_BUILD_MODE="ssr"
