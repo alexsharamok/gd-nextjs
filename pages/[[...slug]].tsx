@@ -19,7 +19,8 @@ const Page = function (props: NextPageProps) {
 
 // Using Automatic Static Optimization
 export async function getStaticPaths() {
-  // await import is essential here because getStaticPaths only server-side and import must only happen server side (on client-side the code will blow up)
+  // await import is essential here because getStaticPaths only server-side 
+  // and import must only happen server side (on client-side the code will blow up)
   const { getStaticPaths } = await import("@uniformdev/next-server");
 
   if (process.env.UNIFORM_BUILD_MODE !== 'ssr') {
@@ -45,7 +46,7 @@ export async function getStaticProps({ params }) {
   const itemId = await tryFindItemId(asPath);
   const timestamp = await tryGetTimestamp(asPath);
   const props = await getNextPageProps({ asPath, itemId, timestamp });
-  return { props };
+  return { props: props, revalidate: 10 };
 }
 
 export default Page;
