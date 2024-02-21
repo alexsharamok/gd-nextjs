@@ -3,5 +3,5 @@
 
 [[redirects]]
 from = "/-/media/*"
-to = "{UNIFORM_API_URL}/-/media/:splat"
+to = "http://ngrok-alexanders.unfrm.uno/-/media/:splat"
 status = 200
