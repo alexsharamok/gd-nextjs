@@ -1,2 +1,7 @@
 [build.environment]
   UNIFORM_BUILD_MODE="ssr"
+
+[[redirects]]
+from = "/-/media/*"
+to = "{UNIFORM_API_URL}/-/media/:splat"
+status = 200
